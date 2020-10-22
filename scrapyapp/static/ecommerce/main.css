@@ -1,0 +1,111 @@
+.title{
+    font-family: 'Leckerli One';
+    font-size: 30px;
+}
+
+i{
+    padding-right: 8px;
+}
+
+.category_block li:hover {
+    background-color: #e8ebfa;
+}
+
+.category_block li:hover a {
+    color: #ffffff;
+}
+
+.category_block li a {
+    color: #343a40;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+footer {
+    background: #343a40;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.vaimo_cms{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #3a3a3a;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 30px;
+}
+
+h1:before, h2:before {
+    left: 0;
+    background: #1e1e1e;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 55%;
+    width: 100%;
+}
+
+h1 span, h2 span {
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    position: relative;
+    padding-left: 50px;
+    padding-top: 10px;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+body a{
+    color: #333333;
+}
+
+.card{
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 12px 14px 22px 2px rgba(0,0,0,0.50);
+    -moz-box-shadow: 12px 14px 22px 2px rgba(0,0,0,0.60);
+    box-shadow: 12px 14px 22px 2px rgba(0,0,0,0.25);
+    margin-bottom: 100px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.card-body{
+    padding: 1rem !important;
+}
+
+label{
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+body a:hover{
+    color: #333333;!important;
+    text-decoration: none;!important;
+}
+
