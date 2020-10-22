@@ -1,5 +1,5 @@
-release: python3 ebazaar/manage.py makemigrations --no-input
-release: python3 ebazaar/manage.py migrate
+release: python3 scrapysite/manage.py makemigrations --no-input
+release: python3 scrapysite/manage.py migrate
 
 web: gunicorn scrapysite.wsgi --log-file -
 worker: celery -A scrapysite worker -l info
