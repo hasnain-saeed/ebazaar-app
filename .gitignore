@@ -1,1 +1,5 @@
-media/
+.vscode
+build/
+node_modules/
+ebazaar/media
+env/

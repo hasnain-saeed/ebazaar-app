@@ -1,6 +1,0 @@
-{% extends "ecommerce/base.html" %}
-{% block content %}
-    {% include "ecommerce/category_section.html" with title="Featured Products" products=featured_products%}
-    {% include "ecommerce/category_section.html" with title="Men" products=men_products slug="men"%}
-    {% include "ecommerce/category_section.html" with title="Women" products=women_products slug="women"%}
-{% endblock content %}
