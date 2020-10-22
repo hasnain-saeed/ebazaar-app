@@ -18,7 +18,7 @@ def debug_task(self):
 app.conf.beat_schedule = {
     'run_spider_every_hour': {
         'task': 'scrapyapp.tasks.run_spider',
-        'schedule': crontab(hour=12, minute=23, day_of_week=4),
+        'schedule': crontab(hour=16, minute=1, day_of_week=4),
         'args': ()
     },
 }
