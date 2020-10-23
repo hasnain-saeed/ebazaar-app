@@ -1,0 +1,69 @@
+{% extends "ecommerce/base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                {% if brands %}
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-list"></i> Brands</div>
+                    <ol class="list-group category_block" id="brand_list">
+                        {% for brand in brands %}
+                            <li class="list-group-item">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input js-brand-item" id="{{ brand }}">
+                                <label class="custom-control-label" for="{{ brand }}">{{ brand }}</label>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                {% endif %}
+                {% if category_types %}
+                <div class="card bg-light mb-3">
+                        <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+                        <ol class="list-group category_block" id="category_list">
+                            {% for category in category_types %}
+                                <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input js-category-item" id="{{ category }}">
+                                    <label class="custom-control-label" for="{{ category }}">{{ category }}</label>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="col">
+                <div class="row">
+                    {% for product in products %}
+                        {% include "ecommerce/product_item.html" %}
+                    {% endfor %}
+                </div>
+                <div class="mt-4 ml-1">
+                    {% if is_paginated %}
+                        {% if page_obj.has_previous %}
+                            <a class="btn btn-outline-dark mb-4" href="?page=1{{ params }}">First</a>
+                            <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}{{ params }}">Previous</a>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <a class="btn btn-dark mb-4" href="?page={{ num }}{{ params }}">{{ num }}</a>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <a class="btn btn-outline-dark mb-4" href="?page={{ num }}{{ params }}">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}{{ params }}">Next</a>
+                            <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}{{ params }}">Last</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}

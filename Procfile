@@ -1,6 +1,6 @@
-release: python3 scrapysite/manage.py makemigrations --no-input
-release: python3 scrapysite/manage.py migrate
+release: python3 manage.py makemigrations --no-input
+release: python3 manage.py migrate --no-input
 
-web: gunicorn scrapysite.scrapysite.wsgi --log-file -
-worker: celery -A scrapysite/scrapysite worker -l info
-beat: celery -A scrapysite/scrapysite beat -l info -S celerybeat-schedule
+web: gunicorn scrapysite.wsgi --log-file
+worker: celery -A scrapysite worker -l info
+beat: celery -A scrapysite beat -l info -S celerybeat-schedule

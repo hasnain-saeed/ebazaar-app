@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="vaimo_cms row ">
+        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="widget widget-static-block"><h2><span>{{ title }}</span></h2></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            {% for product in products|slice:8 %}
+                {% include "ecommerce/product_item.html" %}
+            {% endfor %}
+        </div>
+        <div class="mt-4 mb-4">
+            {% if products.count > 8 %}
+                {% if title == 'Featured Products' %}
+                    <a href="{% url 'featured-products' %}"><button class="btn btn-dark col-12">See More</button></a>
+                {% else %}
+                    <a href="{% url 'gender-products' slug %}"><button class="btn btn-dark col-12">See More</button></a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
