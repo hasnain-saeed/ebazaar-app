@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'bfahg2=i(^u+km7ao8mi01xmyka(bic6i54)p4%6mp_*_abei@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ebazaar-app.herokuapp.com', 'localhost']
 
