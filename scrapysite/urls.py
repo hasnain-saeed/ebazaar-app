@@ -12,6 +12,7 @@ from users import views as user_views
 urlpatterns = [
     path('api/', include('users.api.urls')),
     path('api/', include('scrapyapp.api.urls')),
+    re_path('.*', TemplateView.as_view(template_name='index.html'))
 ]
 
 # urlpatterns = [
